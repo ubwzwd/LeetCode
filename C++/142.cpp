@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <set>
 
+using namespace std;
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -21,10 +23,23 @@
      ListNode(int x) : val(x), next(NULL) {}
  };
 
+// using set to find cycle
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        
+        set<ListNode*> s;
+        while (head!=NULL)
+        {
+            if (s.find(head)==s.end())
+            {
+                s.insert(head);
+                head = head->next;
+            }
+            else{
+                return head;
+            }
+        }
+        return NULL;
     }
 };
 
