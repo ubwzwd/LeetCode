@@ -31,12 +31,14 @@ struct ListNode {
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
+        // inisitalize lists
         ListNode temp1(0);
         ListNode temp2(0);
         ListNode * res1 = &temp1;
         ListNode * res2 = &temp2;
         while(head)
         {
+            // put the values less than x in res1
             if (head->val < x)
             { 
                 res1->next = head;
@@ -50,7 +52,8 @@ public:
                 head = head->next;
             }
         }
-        res1 = temp2.next;
+        res1->next = temp2.next;
+        res2->next = NULL;
         return temp1.next;
     }
 };
