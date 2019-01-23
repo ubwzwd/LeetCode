@@ -47,7 +47,7 @@ public:
                 res1 = res1->next;
                 head = head->next;
             }
-            // slse, put it in temporary list 2s
+            // else, put it in temporary list 2s
             else
             {
                 res2->next = head;
