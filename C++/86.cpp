@@ -32,6 +32,7 @@ class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
         // build two temporary list
+        // inisitalize lists
         ListNode temp1(0);
         ListNode temp2(0);
         ListNode * res1 = &temp1;
@@ -39,6 +40,7 @@ public:
         while(head)
         {
             // if value in this node is less than x, put it in temporary list 1
+            // put the values less than x in res1
             if (head->val < x)
             { 
                 res1->next = head;
@@ -55,6 +57,8 @@ public:
         }
         // combine the two lists
         res1 = temp2.next;
+        res1->next = temp2.next;
+        res2->next = NULL;
         return temp1.next;
     }
 };
