@@ -32,14 +32,13 @@ using namespace std;
 class MyStack {
 private:
     queue<int>* data_queue;
-    /* in the queue, store the data from bottom to top. So we can use pop to get the head element as if we get the element on the top of stack
-public:
-    /** Initialize your data structure here. */
+    /* in the queue, store the data from bottom to top. So we can use pop to get the head element as if we get the element on the top of stack */
     MyStack() {
         data_queue = new queue<int>;
     }
     
     /** Push element x onto stack. */
+public:
     void push(int x) {
         // here we need a new queue to store the previews queue, so that we can store the newest element to the bottom
         queue<int> temp_queue;
@@ -62,8 +61,11 @@ public:
     int pop() {
         if(!data_queue->empty())
         {
+            int top_element = data_queue->front();
             data_queue->pop();
+            return top_element;
         }
+        return NULL;
     }
     
     /** Get the top element. */
@@ -82,5 +84,10 @@ public:
             return true;
         }
         else return false;
+    }
+
+    ~MyStack()
+    {
+        delete data_queue;
     }
 };
