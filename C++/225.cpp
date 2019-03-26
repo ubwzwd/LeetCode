@@ -70,20 +70,12 @@ public:
     
     /** Get the top element. */
     int top() {
-        if(!data_queue->empty())
-        {
-            return data_queue->front();
-        }
-        else return NULL;
+        return data_queue->front();
     }
     
     /** Returns whether the stack is empty. */
     bool empty() {
-        if(data_queue->empty())
-        {
-            return true;
-        }
-        else return false;
+        return data_queue->empty();
     }
 
     ~MyStack()
