@@ -28,30 +28,55 @@ You may assume that all operations are valid (for example, no pop or peek operat
 using namespace std;
 
 class MyQueue {
+private:
+    stack<int>* data_stack;
 public:
     /** Initialize your data structure here. */
     MyQueue() {
-        
+        data_stack = new stack<int>;
     }
     
     /** Push element x to the back of queue. */
     void push(int x) {
-        
+        // import a temp stack to store the preview data
+        stack<int> temp_stack;
+        while(!data_stack->empty())
+        {
+            temp_stack.push(data_stack->top());
+            data_stack->pop();
+        }
+        data_stack->push(x);
+        while(!temp_stack.empty())
+        {
+            data_stack->push(temp_stack.top());
+            temp_stack.pop();
+        }
     }
     
     /** Removes the element from in front of queue and returns that element. */
     int pop() {
-        
+        if(!data_stack->empty())
+        {
+            int front_element = data_stack->top();
+            data_stack->pop();
+            return front_element;
+        }
+        else return NULL;
     }
     
     /** Get the front element. */
     int peek() {
-        
+        return data_stack->top();
     }
     
     /** Returns whether the queue is empty. */
     bool empty() {
-        
+        return data_stack->empty();
+    }
+
+    ~MyQueue()
+    {
+        delete data_stack;
     }
 };
 
