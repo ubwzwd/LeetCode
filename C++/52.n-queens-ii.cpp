@@ -2,74 +2,81 @@
  * @lc app=leetcode id=52 lang=cpp
  *
  * [52] N-Queens II
+ *
+ * https://leetcode.com/problems/n-queens-ii/description/
+ *
+ * algorithms
+ * Hard (53.83%)
+ * Likes:    330
+ * Dislikes: 128
+ * Total Accepted:    109.9K
+ * Total Submissions: 204K
+ * Testcase Example:  '4'
+ *
+ * The n-queens puzzle is the problem of placing n queens on an n×n chessboard
+ * such that no two queens attack each other.
+ * 
+ * 
+ * 
+ * Given an integer n, return the number of distinct solutions to the n-queens
+ * puzzle.
+ * 
+ * Example:
+ * 
+ * 
+ * Input: 4
+ * Output: 2
+ * Explanation: There are two distinct solutions to the 4-queens puzzle as
+ * shown below.
+ * [
+ * [".Q..",  // Solution 1
+ * "...Q",
+ * "Q...",
+ * "..Q."],
+ * 
+ * ["..Q.",  // Solution 2
+ * "Q...",
+ * "...Q",
+ * ".Q.."]
+ * ]
+ * 
+ * 
  */
-#include <vector>
-#include <string>
-#include <iostream>
-using namespace std;
 
+// @lc code=start
+#include <vector>
+using namespace std;
 class Solution {
 public:
     int totalNQueens(int n) {
-        // set a vector to store the location of each queen
-        vector<string> queen_pos;
-        string temp;
-        for (int i = 0; i < n; i++)
-        {
-            temp.append(".");
-        }
-        for (int i = 0; i < n; i++)
-        {
-            queen_pos.push_back(temp);
-        }
+        // a point at (row, col) is valide when col is valide
+        vector<int> validate_col(n, true);
+        // a point at (row, col) is valide when the row+col is valide in 45 degree, and the n-1 + row - col is valide in 135 degree
+        vector<int> validate_45_degree(2*n-1, true);
+        vector<int> validate_135_degree(2*n-1, true);
         int res = 0;
-        // initialize the chessboard, 0 means unoccupied, 1 means occupied
-        vector<int> chessboard_row(n, 0);
-        vector<vector<int>> chessboard(n, chessboard_row);
-
-        solveNQueensRec(0, n, chessboard, queen_pos, res);
-
+        // count is the number of queens that are already put on the chessboard
+        int count = 0;
+        totalNQueensRec(n, 0, res, validate_col, validate_45_degree, validate_135_degree);
         return res;
     }
 private:
-    const int dx[8] = {-1, 1, 0, 0, -1, -1, 1, 1};
-    const int dy[8] = {0, 0, -1, 1, -1, 1, -1, 1};
-    void putAQueen(int x, int y, vector<vector<int>> &chessboard)
-    {
-        chessboard[x][y] = 1;
-        for (int i = 0; i < chessboard.size(); i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                int new_x = x + i * this->dx[j];
-                int new_y = y + i * this->dy[j];
-                if (new_x >= 0 && new_x < chessboard.size() && new_y >= 0 && new_y < chessboard.size())
-                    chessboard[new_x][new_y] = 1;
-            }
-        }
-    }
-
-    void solveNQueensRec(int k, int n, vector<vector<int>> &chessboard, vector<string> &temp, int &res)
-    {
-        // k is the number of queens already put
-        if (k == n)
-        {
+    void totalNQueensRec(int n, int count, int& res, vector<int>& validate_col, vector<int>& validate_45_degree, vector<int>& validate_135_degree){
+        // if n queens have been put
+        if(count == n){
             res++;
             return;
         }
-        // try every colum
-        for (int i = 0; i < n; i++)
-        {
-            if (chessboard[k][i] == 0)
-            {
-                vector<vector<int>> chessboard_temp = chessboard;
-                temp[k][i] = 'Q';
-                putAQueen(k, i, chessboard);
-                solveNQueensRec(k + 1, n, chessboard, temp, res);
-                chessboard = chessboard_temp;
-                temp[k][i] = '.';
+        // if not, we can still put queens. Now it is the turn for the (count+1)-th. That means, now we are at count-th row
+        for(int i = 0; i < n; i++){
+            // check if the position is valide
+            if(validate_col[i] && validate_45_degree[count+i] && validate_135_degree[n-1+count-i]){
+                validate_col[i] = validate_45_degree[count+i] = validate_135_degree[n-1+count-i] = false;
+                totalNQueensRec(n, count+1, res, validate_col, validate_45_degree, validate_135_degree);
+                validate_col[i] = validate_45_degree[count+i] = validate_135_degree[n-1+count-i] = true;
             }
         }
     }
 };
+// @lc code=end
 

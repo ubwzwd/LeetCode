@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "MinGW",
+            "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -10,10 +10,9 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\MinGW\\bin\\g++.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++11",
-            "intelliSenseMode": "gcc-x64"
+            "windowsSdkVersion": "10.0.18362.0",
+            "compilerPath": "C:/MinGW/bin/g++.exe",
+            "intelliSenseMode": "gcc-x86"
         }
     ],
     "version": 4

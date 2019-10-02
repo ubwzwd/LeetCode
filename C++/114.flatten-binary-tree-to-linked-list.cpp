@@ -2,6 +2,45 @@
  * @lc app=leetcode id=114 lang=cpp
  *
  * [114] Flatten Binary Tree to Linked List
+ *
+ * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+ *
+ * algorithms
+ * Medium (43.81%)
+ * Likes:    1707
+ * Dislikes: 224
+ * Total Accepted:    258.6K
+ * Total Submissions: 590.1K
+ * Testcase Example:  '[1,2,5,3,4,null,6]'
+ *
+ * Given a binary tree, flatten it to a linked list in-place.
+ * 
+ * For example, given the following tree:
+ * 
+ * 
+ * ⁠   1
+ * ⁠  / \
+ * ⁠ 2   5
+ * ⁠/ \   \
+ * 3   4   6
+ * 
+ * 
+ * The flattened tree should look like:
+ * 
+ * 
+ * 1
+ * ⁠\
+ * ⁠ 2
+ * ⁠  \
+ * ⁠   3
+ * ⁠    \
+ * ⁠     4
+ * ⁠      \
+ * ⁠       5
+ * ⁠        \
+ * ⁠         6
+ * 
+ * 
  */
 /**
  * Definition for a binary tree node.
@@ -15,75 +54,49 @@
 #include <iostream>
 using namespace std;
 
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-class Solution
-{
+
+class Solution {
 public:
-    void flatten(TreeNode *root)
-    {
-        TreeNode *last = nullptr;
+    void flatten(TreeNode* root) {
+        // the last node stores the last element of the branch
+        TreeNode* last = root;
         flattenRec(root, last);
     }
 
 private:
-    void flattenRec(TreeNode *node, TreeNode *&last)
+    void flattenRec(TreeNode* node, TreeNode* last)
     {
-        if (!node)
+        if(!node)
             return;
-        if (!node->left && !node->right)
+        if(!node->left && !node->right)
         {
             last = node;
             return;
         }
-        TreeNode *left = node->left;
-        TreeNode *right = node->right;
-        TreeNode *left_last = nullptr;
-        TreeNode *right_last = nullptr;
-        if (left)
-        {
+        // back up the two trees
+        TreeNode* left = node->left;
+        TreeNode* right = node->right;
+        if(left)
+        {            
+            TreeNode* left_last = left;
             flattenRec(left, left_last);
-            node->left = nullptr;
-            node->right = left;
             last = left_last;
+            node->right = left;
+            node->left = nullptr;
         }
-        if (right)
+        if(right)
         {
+            TreeNode* right_last = right;
             flattenRec(right, right_last);
-            if (left_last)
-                last->right = right;
-            last = right_last;
+            last->right = right;
+            last = right_last;            
         }
     }
 };
 
-int main()
-{
-    TreeNode a(1);
-    TreeNode b(2);
-    TreeNode c(5);
-    TreeNode d(3);
-    TreeNode e(4);
-    TreeNode f(6);
-    a.left = &b;
-    a.right = &c;
-    b.left = &d;
-    b.right = &e;
-    c.right = &f;
-    Solution solve;
-    solve.flatten(&a);
-    TreeNode *head = &a;
-    while (head)
-    {
-        if (head->left)
-            cout << "Error\n";
-        cout << head->val << endl;
-        head = head->right;
-    }
-    return 0;
-}
