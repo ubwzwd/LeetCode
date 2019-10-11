@@ -37,10 +37,26 @@
  */
 
 // @lc code=start
+#include <vector>
+#include <algorithm>
+using namespace std;
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        
+        int len = prices.size();
+        if(len<=1) return 0;
+        // buy on that day or sell on that day
+        int buy[len]{0}, sell[len]{0};
+        // day 0 and 1 are the special case
+        buy[0] = -prices[0];
+        sell[1] = max(0, buy[0] + prices[1]);
+        buy[1] = buy[0];
+        for(int i = 2; i < len; i++){
+            // pay the fee on sell
+            buy[i] = max(buy[i-1], sell[i-2] - prices[i]);
+            sell[i] = max(sell[i-1], buy[i-1] + prices[i]);
+        }
+        return sell[len-1];
     }
 };
 // @lc code=end
