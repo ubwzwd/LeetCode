@@ -2,16 +2,15 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "g++.exe build active file",
-            "command": "C:/MinGW/bin/g++.exe",
+            "label": "g++ build active file",
+            "command": "/usr/bin/g++",
             "args": [
                 "-g",
-                "${file}",
+                "/mnt/c/Users/320071076/.leetcode/C++/${fileBasename}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "/mnt/c/Users/320071076/.leetcode/C++/${fileBasenameNoExtension}"
             ],
             "options": {
-                "cwd": "C:/MinGW/bin"
             }
         }
     ],

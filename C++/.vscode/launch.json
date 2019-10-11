@@ -8,14 +8,18 @@
             "name": "g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "/mnt/c/Users/320071076/.leetcode/C++/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "/mnt/c/Users/320071076/.leetcode/C++/",
             "environment": [],
             "externalConsole": false,
+            "sourceFileMap": {
+                "/mnt/c/": "C:\\",
+                "C:\\": "/mnt/c/"
+            },
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "miDebuggerPath": "/usr/share/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -23,7 +27,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "g++.exe build active file"
+            "preLaunchTask": "g++ build active file"
         }
     ]
 }
