@@ -50,9 +50,10 @@ public:
         // day 0 and 1 are the special case
         buy[0] = -prices[0];
         sell[1] = max(0, buy[0] + prices[1]);
-        buy[1] = buy[0];
+        // either buy on 1st or 2nd day
+        buy[1] = max(buy[0], -prices[1]);
         for(int i = 2; i < len; i++){
-            // pay the fee on sell
+            // 1 day cooldown after sell
             buy[i] = max(buy[i-1], sell[i-2] - prices[i]);
             sell[i] = max(sell[i-1], buy[i-1] + prices[i]);
         }
