@@ -15,6 +15,7 @@
 // #include <string>
 // #include <iostream>
 // #include <vector>
+// #include <climits>
 // using namespace std;
 // struct TreeNode {
 //     int val;
@@ -37,7 +38,7 @@ private:
         preOrder(node->right, s);
     }
 
-    TreeNode* reconstruct(const string& s, int& pos){
+    TreeNode* reconstruct(const string& s, int& pos, int mini, int maxi){
         if(pos >= s.size()) return nullptr;
         int num;
         int start = pos;
@@ -46,9 +47,13 @@ private:
         }
         num = stoi(s.substr(start, (pos-start)));
         pos++;
+        if(num > maxi || num < mini) {
+            pos = start;
+            return nullptr;
+        }
         TreeNode* node = new TreeNode(num);
-        node->left = reconstruct(s, pos);
-        node->right = reconstruct(s, pos);
+        node->left = reconstruct(s, pos, mini, num);
+        node->right = reconstruct(s, pos, num, maxi);
         return node;
     }
 
@@ -64,7 +69,7 @@ public:
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
         int pos = 0;
-        return reconstruct(data, pos);
+        return reconstruct(data, pos, INT_MIN, INT_MAX);
     }
 };
 
