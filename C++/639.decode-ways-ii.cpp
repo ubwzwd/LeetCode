@@ -81,11 +81,15 @@ class Solution {
             return a == '1' || (a == '2' && b <= '6');
         else if(a == '*' && b != '*'){
             // a can only be 1 or 2
-            return 9 + (b <= '6');
+            return 1 + (b <= '6');
         }
-        else{
+        else if(a != '*' && b == '*'){
             // a != '*' && b == '*'
             return (9*(a == '1')) + (6*(a == '2'));
+        }
+        else{
+            // a == '*' == b
+            return 15;
         }
     }
 public:
@@ -93,14 +97,17 @@ public:
         // the same as step 1 or 2
         int len = s.size();
         if(len == 0 || !isValid(s[0])) return 0;
-        if(len == 1 && isValid(s[0])) return 1;
-        vector<int> dp(len, 0);
-        dp[0] = 1 * isValid(s[0]);
+        if(len == 1 && isValid(s[0])) return isValid(s[0]);
+        vector<long> dp(len, 0);
+        dp[0] = isValid(s[0]);
         if(isValid(s[0], s[1])) dp[1] = isValid(s[0], s[1]);
-        if(isValid(s[1])) dp[1]+=dp[0]*isValid(s[1]);
+        if(isValid(s[1])) dp[1]+= dp[0]*isValid(s[1]);
         for(int i = 2; i < len; i++){
-            if(isValid(s[i])) dp[i] += (dp[i-1] * isValid(s[i]));
-            if(isValid(s[i-1], s[i])) dp[i] += (dp[i-2] * isValid(s[i]));
+            // if(isValid(s[i])) dp[i] += (dp[i-1] + isValid(s[i]) - 1);
+            dp[i] += (dp[i-1] * isValid(s[i]) );
+            // if(isValid(s[i-1], s[i])) dp[i] += (dp[i-2] + isValid(s[i]) - 1);
+            dp[i] += (dp[i-2] * isValid(s[i-1], s[i]) );
+            dp[i] = dp[i]%1000000007;
         }
         return dp[len-1];
     }
