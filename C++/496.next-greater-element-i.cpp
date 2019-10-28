@@ -61,14 +61,48 @@
 
 
 #include <vector>
+#include <stack>
+#include <unordered_map>
 using namespace std;
 
 // @lc code=start
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-        
+        stack<int> s;
+        unordered_map<int, int> m;
+        vector<int> res(nums1.size(), -1);
+        for(int i = 0; i < nums2.size(); i++){
+            while(!s.empty() && nums2[i] > s.top()){
+                m.insert(make_pair(s.top(), nums2[i]));
+                s.pop();
+            }
+            s.push(nums2[i]);
+        }
+        while(!s.empty()){
+            m.insert(make_pair(s.top(), -1));
+            s.pop();
+        }
+        for(int i = 0; i < nums1.size(); i++){
+            res[i] = m[nums1[i]];
+        }
+        return res;
     }
+
+    //     vector<int> nextGreaterElement(vector<int>& findNums, vector<int>& nums) {
+    //     stack<int> s;
+    //     unordered_map<int, int> m;
+    //     for (int n : nums) {
+    //         while (s.size() && s.top() < n) {
+    //             m[s.top()] = n;
+    //             s.pop();
+    //         }
+    //         s.push(n);
+    //     }
+    //     vector<int> ans;
+    //     for (int n : findNums) ans.push_back(m.count(n) ? m[n] : -1);
+    //     return ans;
+    // }
 };
 // @lc code=end
 
