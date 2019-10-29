@@ -43,6 +43,12 @@
  * 
  * 
  */
+using namespace std;
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
 
 // @lc code=start
 /**
@@ -56,7 +62,21 @@
 class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
-        
+        if(!head || !head->next) return head;
+        ListNode* odd = head, *even = head->next, *cur = head->next, *even_head = head->next;
+        while(cur->next){
+            odd->next = cur->next;
+            odd = odd->next;
+            cur = cur->next;
+            if(cur->next){
+                even->next = cur->next;
+                even = even->next;
+                cur = cur->next;
+            }
+        }
+        even->next = nullptr;
+        odd->next = even_head;
+        return head;
     }
 };
 // @lc code=end
