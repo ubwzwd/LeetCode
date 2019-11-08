@@ -1,40 +1,34 @@
+/*
+找到N以内所有的质数
+
+[2, sqrt(n)]
+*/
+
 #include <iostream>
-#include <string>
-#include <stack>
+#include <cmath>
+
 using namespace std;
 
 int main(){
-    string s;
-    getline(cin, s);
-    if(s.size() <= 2){
-        cout << s << endl;
-        return 0;
+    int n = 100;
+    if(n == 1) {
+        cout << 1 << endl;
     }
-    int left = 0;
-    int i = 0;
-    int flag = 0;
-    string temp;
-    while(i < s.size()){
-        if(s[i] == '['){
-            left ++;
-        }
-        else if(s[i] != ']'){
-            if(flag == 0 && s[i] != ','){
-                temp.push_back('[');
-                flag = 1;
+    else if (n == 2){
+        cout << 1 << endl << 2 << endl;
+    }
+    else{
+        cout << 1 << endl << 2 << endl;
+        int flag = 0;
+        for(int i = 3; i <= n; i++){
+            for(int j = 2; j < sqrt(float(i)); j++){
+                if(i % j != 0)
+                    flag = 1;
+                    break;
             }
-            temp.push_back(s[i]);
-        }
-        else{
-            left --;
-            if(temp.empty())
-                cout << '[' <<']';
-            else
-                cout << temp << ']';
-            temp.clear();
+            if(flag == 0) cout << i << endl;
             flag = 0;
         }
-        i++;
     }
     return 0;
 }
