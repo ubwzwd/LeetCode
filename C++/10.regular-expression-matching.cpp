@@ -84,23 +84,44 @@
  * 
  */
 #include <string>
+#include <vector>
 using namespace std;
 
+// class Solution {
+// public:
+//     bool isMatch(string s, string p) {
+//         if(p.empty()) return s.empty();
+//         int j = 0; // the index for p
+//         bool first_match = (!s.empty() && (p[0] == s[0] || p[0] == '.'));
+//         if(p.size()>=2 && p[1] == '*'){
+//             // * represents 0 time, or at least 1 time
+//             return isMatch(s, p.substr(2)) || (first_match &&isMatch(s.substr(1), p));
+//         }
+//         else{
+//             return first_match && isMatch(s.substr(1), p.substr(1));
+//         }
+//         return true;
+//     }
+// };
+
 // @lc code=start
+
+// buttom up
 class Solution {
+private:
+    void rec(string& s, string& p, int i, int j, vector<vector<bool>> dp){
+        /*
+        i is the index for s, and j is for p
+        */
+        if(i == s.size() || j == p.size()) return;
+    }
+
 public:
     bool isMatch(string s, string p) {
         if(p.empty()) return s.empty();
-        int j = 0; // the index for p
-        bool first_match = (!s.empty() && (p[0] == s[0] || p[0] == '.'));
-        if(p.size()>=2 && p[1] == '*'){
-            // * represents 0 time, or at least 1 time
-            return isMatch(s, p.substr(2)) || (first_match &&isMatch(s.substr(1), p));
-        }
-        else{
-            return first_match && isMatch(s.substr(1), p.substr(1));
-        }
-        return true;
+        // dp[i+1][j+1] = true means that s[:i] and p[:j] match
+        vector<vector<bool>> dp(s.size()+1, vector<bool>(p.size()+1, false));
+        
     }
 };
 // @lc code=end
