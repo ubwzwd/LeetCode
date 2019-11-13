@@ -109,11 +109,22 @@ using namespace std;
 // buttom up
 class Solution {
 private:
-    void rec(string& s, string& p, int i, int j, vector<vector<bool>> dp){
+    void rec(string& s, string& p, int i, int j, vector<vector<bool>>& dp){
         /*
         i is the index for s, and j is for p
         */
         if(i == s.size() || j == p.size()) return;
+        if(p[j] != '*' ){
+            dp[i+1][j+1] = dp[i][j];
+        }
+        // p[j] == '*'
+        else {
+            // '.*' represents 0 or at leat 1 character
+            dp[i+1][j+1] = dp[i+1][j-1] || ((s[i] == p[j-1] || p[j-1] == '.') && dp[i][j+1]);
+        }
+        rec(s,p,i,j+1, dp);
+        rec(s,p,i+1,j, dp);
+        rec(s,p,i+1,j+1, dp);
     }
 
 public:
@@ -121,7 +132,8 @@ public:
         if(p.empty()) return s.empty();
         // dp[i+1][j+1] = true means that s[:i] and p[:j] match
         vector<vector<bool>> dp(s.size()+1, vector<bool>(p.size()+1, false));
-        
+        rec(s,p,0,0,dp);
+        return dp[s.size()][p.size()];
     }
 };
 // @lc code=end
