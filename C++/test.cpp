@@ -6,29 +6,24 @@
 
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 using namespace std;
 
-int main(){
-    int n = 100;
-    if(n == 1) {
-        cout << 1 << endl;
-    }
-    else if (n == 2){
-        cout << 1 << endl << 2 << endl;
-    }
-    else{
-        cout << 1 << endl << 2 << endl;
-        int flag = 0;
-        for(int i = 3; i <= n; i++){
-            for(int j = 2; j < sqrt(float(i)); j++){
-                if(i % j != 0)
-                    flag = 1;
-                    break;
+int removeElement(vector<int>&nums, int val){
+    if(nums.empty()) return 0;
+    int curr = 0, prev = 0;
+    while(curr < nums.size()){
+        if(nums[curr] != val){
+            if(curr != prev){
+                nums[prev+1] = nums[curr];
             }
-            if(flag == 0) cout << i << endl;
-            flag = 0;
+            curr++;
+            prev++;
+        }
+        else{
+            curr++;
         }
     }
-    return 0;
+    return prev+1;
 }
