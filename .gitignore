@@ -3,4 +3,4 @@
 .vscode/
 .java
 *.json
-C++/.vscode/c_cpp_properties.json
+C++/.vscode/

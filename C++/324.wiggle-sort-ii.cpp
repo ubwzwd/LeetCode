@@ -35,6 +35,7 @@
  * Can you do it in O(n) time and/or in-place with O(1) extra space?
  */
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 // @lc code=start
@@ -61,23 +62,14 @@ class Solution {
     }
 public:
     void wiggleSort(vector<int>& nums) {
-        if(nums.size()<=1) return;
-        quickSort(nums, 0, nums.size()-1);
-        int i = 0, j = nums.size()-1, index = 0;
-        vector<int> temp = nums;
-        while(i <= j){
-            if(i == j){
-                nums[index] = temp[i];
-            }
-            else{
-                nums[index] = temp[i];
-                nums[index+1] = temp[j];
-            }
-            i++;
-            j--;
-            index+=2;
-        }
+        int n = nums.size();
+        if(!n) return;
+        nth_element(nums.begin(), nums.begin()+n/2, nums.end());
+        int v = nums[n/2];
+        #define A(i) nums[((i)*2+1)%(n|1)]
+
     }
 };
 // @lc code=end
+
 
