@@ -63,11 +63,25 @@ class Solution {
 public:
     void wiggleSort(vector<int>& nums) {
         int n = nums.size();
-        if(!n) return;
-        nth_element(nums.begin(), nums.begin()+n/2, nums.end());
-        int v = nums[n/2];
-        #define A(i) nums[((i)*2+1)%(n|1)]
-
+        if(n <= 1) return;
+        quickSort(nums, 0, n-1);
+        if(n == 2) return;
+        vector<int> temp = nums;
+        if(n%2){
+            nums[0] = temp[n/2];
+            nums[1] = temp[n-1];
+            for(int i = 0; i < n/2-1; i++){
+                nums[3+2*i] = temp[i+n/2+1];
+                nums[2+2*i] = temp[i];
+            }
+            nums[n-1] = temp[n/2-1];
+        }
+        else{
+            for(int i = 0; i < n/2; i++){
+                nums[2*i] = temp[i];
+                nums[2*i+1] = temp[i+n/2];
+            }
+        }
     }
 };
 // @lc code=end
