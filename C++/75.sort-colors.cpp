@@ -54,7 +54,9 @@ public:
     void sortColors(vector<int>& nums) {
         int len = nums.size();
         if(!len) return;
+        // these three index are the heads of each color
         int red = 0, blue = len-1, white = 0;
+        // the order of sorted colors should be red, white, blue
         while(white <= blue){
             if(nums[white] == 0){
                 swap(nums[white], nums[red]);
