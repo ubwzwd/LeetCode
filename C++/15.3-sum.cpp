@@ -35,49 +35,81 @@
  */
 #include <vector>
 #include <algorithm>
+#include <iostream>
 using namespace std;
 
 // @lc code=start
-class Solution {
+class Solution
+{
 private:
-    void threeSumRec(vector<int>& nums, int i, vector<int> temp, vector<vector<int>>& res){
-        if(i >= nums.size() || temp.size() >= 3) return;
+    void threeSumRec(vector<int> &nums, int i, vector<int> temp, vector<vector<int>> &res)
+    {
+        if (i >= nums.size() || temp.size() >= 3)
+            return;
         temp.push_back(nums[i]);
-        int j = i+1;
-        if(temp.size()==3 && temp[0]+temp[1]+temp[2] == 0){
+
+        // for(auto i : temp){
+        //     cout << i << ' ';
+        // }
+        // cout << endl;
+
+        if (temp.size() == 3 && temp[0] + temp[1] + temp[2] == 0)
+        {
+            // cout << 233 << endl;
             res.push_back(temp);
-            while(j < nums.size() && nums[j] == nums[i]) j++;
         }
-        for(j; j < nums.size(); j++){
+        int j = i + 1;
+        threeSumRec(nums, j, temp, res);
+        j++;
+        for (j; j < nums.size(); j++)
+        {
+            while (j < nums.size() && nums[j] == nums[j - 1])
+                j++;
             threeSumRec(nums, j, temp, res);
         }
     }
 
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> threeSum(vector<int> &nums)
+    {
         int len = nums.size();
-        if(len<3) return vector<vector<int>> {};
+        if (len < 3)
+            return vector<vector<int>>{};
         sort(nums.begin(), nums.end());
         vector<int> temp;
         vector<vector<int>> res;
-        for(int i = 0; i < len-2; i++){
-            int l = i+1, r = len-1;
-            while(l < r){
-                if(nums[i] + nums[l] + nums[r] < 0) l++;
-                else if(nums[i] + nums[l] + nums[r] > 0)    r--;
-                else{
-                    // == 0
-                    res.push_back(vector<int>{nums[i], nums[l], nums[r]});
-                    l++;
-                    r--;
-                    while(l < r && nums[l] == nums[l-1]) l++;
-                    while(l < r && nums[r] == nums[r+1]) r--;
-                }
-            }
-            while(i < len-2 && nums[i] == nums[i+1]) i++;
+        // for (int i = 0; i < len - 2; i++)
+        // {
+        //     int l = i + 1, r = len - 1;
+        //     while (l < r)
+        //     {
+        //         if (nums[i] + nums[l] + nums[r] < 0)
+        //             l++;
+        //         else if (nums[i] + nums[l] + nums[r] > 0)
+        //             r--;
+        //         else
+        //         {
+        //             // == 0
+        //             res.push_back(vector<int>{nums[i], nums[l], nums[r]});
+        //             l++;
+        //             r--;
+        //             while (l < r && nums[l] == nums[l - 1])
+        //                 l++;
+        //             while (l < r && nums[r] == nums[r + 1])
+        //                 r--;
+        //         }
+        //     }
+        //     while (i < len - 2 && nums[i] == nums[i + 1])
+        //         i++;
+        // }
+        threeSumRec(nums, 0, temp, res);
+        for (int i = 1; i < len - 2; i++)
+        {
+            while (i < len - 2 && nums[i] == nums[i - 1])
+                i++;
+            threeSumRec(nums, i, temp, res);
         }
         return res;
     }
 };
 // @lc code=end
-
