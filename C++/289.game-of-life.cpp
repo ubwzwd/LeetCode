@@ -76,8 +76,61 @@ class Solution {
     int dx[8] = {1,1,0,-1,-1,-1,0,1};
     int dy[8] = {0,1,1,1,0,-1,-1,-1};
 public:
+
+    // // time complexity: O(mn), space complexity: O(mn)
+    // void gameOfLife(vector<vector<int>>& board) {
+    //     int row = board.size();
+    //     if(row == 0) return;
+    //     int col = board[0].size();
+    //     if(col == 0) return;
+    //     int count = 0, nx = 0, ny = 0;
+    //     vector<vector<int>> temp = board;
+    //     for(int i = 0; i < row; i++){
+    //         for(int j = 0; j < col; j++){
+    //             count = 0;
+    //             for(int k = 0; k < 8; k++){
+    //                 nx = i+dx[k];
+    //                 ny = j+dy[k];
+    //                 if(nx >= 0 && nx < row && ny >= 0 && ny < col){
+    //                     if(temp[nx][ny] == 1) count++;
+    //                 }
+    //             }
+    //             if(count == 3) board[i][j] = 1;
+    //             else if(count != 2) board[i][j] = 0;
+    //         }
+    //     }
+    // }
+
+    // time complexity: O(mn), space complexity: O(1)
     void gameOfLife(vector<vector<int>>& board) {
-        
+        int row = board.size();
+        if(row == 0) return;
+        int col = board[0].size();
+        if(col == 0) return;
+        // now there are 2 status: b'01 and b'00
+        // if the pixel is already judged, there where be 4 status. b'xx, the first will be the new status
+        // and the second can be the previous status.
+        // so if the number is odd, the previous status is 1, if is even, the previous status is 0
+        int count = 0, nx = 0, ny = 0;
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                count = 0;
+                for(int k = 0; k < 8; k++){
+                    nx = i+dx[k];
+                    ny = j+dy[k];
+                    if(nx >= 0 && nx < row && ny >= 0 && ny < col && board[nx][ny]%2){
+                        count++;
+                    }
+                }
+                if(count == 3) board[i][j] += 2;
+                else if (count == 2) board[i][j] += board[i][j]*2;
+            }
+        }
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                board[i][j] = (board[i][j] > 1);
+            }
+        }
     }
 };
 // @lc code=end
