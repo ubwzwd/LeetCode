@@ -63,6 +63,7 @@
  */
 #include <string>
 #include <vector>
+#include <stack>
 using namespace std;
 // @lc code=start
 class Solution {
@@ -72,31 +73,19 @@ public:
         if(len == 0) return true;
         if(len%2) return false;
         int count[3] = {0,0,0};
+        stack<char> sta;
         for(int i = 0; i < len; i++){
-            if(s[i] == '('){
-                count[0]++;
+            if(s[i] == '(' || s[i] == '[' || s[i] == '{'){
+                sta.push(s[i]);
             }
-            else if(s[i] == '['){
-                count[1]++;
-            }
-            else if(s[i] == '{'){
-                count[2]++;
-            }
-            else if(s[i] == ')'){
-                count[0]--;
-                if(count[0] < 0) return false;
-            }
-            else if(s[i] == ']'){
-                count[1]--;
-                if(count[1] < 0) return false;
-            }
-            else if(s[i] == '}'){
-                count[2]--;
-                if(count[2] < 0) return false;
+            else{
+                if(sta.empty() || (sta.top() == '(' && s[i] != ')') || (sta.top() == '[' && s[i] != ']') || (sta.top() == '{' && s[i] != '}')){
+                    return false;
+                }
+                sta.pop();
             }
         }
-        if(count[0]!=0 || count[1]!=0 || count[2]!=0) return false;
-        return true;
+        return sta.empty() ? true : false;
     }
 };
 // @lc code=end
