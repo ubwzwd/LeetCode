@@ -65,8 +65,36 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
+    // space: O(m+n)
     void setZeroes(vector<vector<int>>& matrix) {
-        
+        int m = matrix.size();
+        if(m == 0) return;
+        int n = matrix[0].size();
+        if(n == 0) return;
+        vector<int> xs(m,0);
+        vector<int> ys(n,0);
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(matrix[i][j] == 0) {
+                    xs[i]++;
+                    ys[j]++;
+                }
+            }
+        }
+        for(int i = 0; i < m; i++){
+            if(xs[i] > 0){
+                for(int k = 0; k < n; k++){
+                    matrix[i][k] = 0;
+                }
+            }
+        }
+        for(int i = 0; i < n; i++){
+            if(ys[i] > 0){
+                for(int k = 0; k < m; k++){
+                    matrix[k][i] = 0;
+                }
+            }
+        }
     }
 };
 // @lc code=end
