@@ -35,9 +35,9 @@
 #include <vector>
 using namespace std;
 // @lc code=start
-template <typename T>
 class Solution {
 private:
+    template <typename T>
     void swap(T& a, T& b){
         T temp = a;
         a = b;
@@ -52,6 +52,7 @@ public:
         }
         int left = 0, right =0;
         while(left<len && right<len){
+            right = left;
             while(right < len && s[right] != ' ') right++;
             for(int i = left; i < (right+left)/2; i++){
                 swap(s[i], s[left+right-i-1]);
