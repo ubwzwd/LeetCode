@@ -53,12 +53,28 @@
  * 
  */
 #include <vector>
+#include <bitset>
 using namespace std;
 // @lc code=start
 class Solution {
+    void grayCodeRec(bitset<32>& bits, vector<int>& res, int index){
+        if(index == 0){
+            res.push_back(bits.to_ulong());
+        }
+        else{
+            grayCodeRec(bits, res, index-1);
+            bits.flip(index-1);
+            grayCodeRec(bits, res, index-1);
+        }
+        return;
+    }
 public:
     vector<int> grayCode(int n) {
-        return vector<int>{};
+        if(n == 0) return vector<int>{0};
+        bitset<32> bits;
+        vector<int> res;
+        grayCodeRec(bits, res, n);
+        return res;
     }
 };
 // @lc code=end

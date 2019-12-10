@@ -75,7 +75,7 @@ class Solution {
     int diff(string& a, string& b){
         int res = 0;
         for(int i = 0; i < a.size(); i++){
-            res += abs(a[i]-b[i]);
+            if(a[i] != b[i]) res++;
         }
         return res;
     }
