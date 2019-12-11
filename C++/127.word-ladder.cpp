@@ -79,12 +79,6 @@ class Solution {
         }
         return res;
     }
-    int ladderLengthRec(string& beginword, string& endWord, vector<string>& wordList, int temp, int index){
-        if(beginword == endWord){
-            return temp;
-        }
-        for(int )
-    }
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
         int length = 0;
@@ -95,12 +89,38 @@ public:
                 break;
             }
         }
+        
         if(isEndWordExists == false) return 0;
         int res = 0;
-        res = ladderLengthRec(beginWord, endWord, wordList, 0, 0);
+        queue<pair<int,int>> Q;
+        vector<int> visited(wordList.size(), 0);
         for(int i = 0; i < wordList.size(); i++){
-            
+            if(diff(wordList[i], beginWord) == 1) {
+                Q.push(make_pair(i, 2));
+                visited[i] = 1;
+            }
         }
+        int cur_index=0, cur_layer = 0;
+        while(!Q.empty()){
+            cur_index = Q.front().first;
+            cur_layer = Q.front().second;
+            Q.pop();
+            if(wordList[cur_index] == endWord){
+                res = cur_layer;
+                break;
+            } 
+            if(cur_layer <= wordList.size())
+            {
+                for(int i = 0; i < wordList.size(); i++){
+                    if(cur_index != i && diff(wordList[i], wordList[cur_index]) == 1 && visited[i] == 0){
+                        Q.push(make_pair(i, cur_layer+1));
+                        visited[i] = 1;
+                    }
+                }
+            }
+            else break;
+        }
+        return res;
     }
 };
 // @lc code=end
