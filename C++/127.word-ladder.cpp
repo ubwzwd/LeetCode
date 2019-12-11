@@ -75,16 +75,16 @@ class Solution {
     int diff(string& a, string& b){
         int res = 0;
         for(int i = 0; i < a.size(); i++){
-            res += abs(a[i]-b[i]);
+            if(a[i]!=b[i]) res++;
         }
         return res;
     }
-    int ladderLengthRec(string& beginword, string& endWord, vector<string>& wordList, int temp, int index){
-        if(beginword == endWord){
-            return temp;
-        }
-        for(int )
-    }
+    // int ladderLengthRec(string& beginword, string& endWord, vector<string>& wordList, int temp, int index){
+    //     if(beginword == endWord){
+    //         return temp;
+    //     }
+    //     for(int )
+    // }
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
         int length = 0;
@@ -92,15 +92,33 @@ public:
         for(int i = 0; i < wordList.size(); i++){
             if(wordList[i] == endWord){
                 isEndWordExists = true;
-                break;
             }
+            if(wordList[i] == beginWord) return 1;
         }
         if(isEndWordExists == false) return 0;
         int res = 0;
-        res = ladderLengthRec(beginWord, endWord, wordList, 0, 0);
+        // res = ladderLengthRec(beginWord, endWord, wordList, 0, 0);
+        // <int,int> is <index, layer>
+        queue<pair<int,int>> bfs;
         for(int i = 0; i < wordList.size(); i++){
-            
+            if(diff(beginWord, wordList[i]) == 1){
+                bfs.push(make_pair(i, 2));
+            }
         }
+        int index = 0, layer = 0;
+        while(!bfs.empty()){
+            index = bfs.front().first;
+            layer = bfs.front().second;
+            if(wordList[index] == endWord){
+                return layer;
+            }
+            for(int i = 0; i < wordList.size(); i++){
+                if(i != index && diff(wordList[i], wordList[index]) == 1){
+                    bfs.push(make_pair(i, layer+1));
+                }
+            }
+        }
+        return res;
     }
 };
 // @lc code=end
