@@ -46,6 +46,7 @@
  * 
  */
 #include <string>
+#include <queue>
 using namespace std;
 struct TreeNode {
     int val;
@@ -69,6 +70,7 @@ public:
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
         if(!root) return string{"[]"};
+        string a{"["};
     }
 
     // Decodes your encoded data to tree.
