@@ -65,12 +65,48 @@ struct TreeNode {
  * };
  */
 class Codec {
+    // void serializeRec(TreeNode* node, string& res){
+    //     if(!node) {
+    //         res.append("null");
+    //         return;
+    //     }
+    //     res.append(node->val);
+    //     res.push_back(',');
+    //     serializeRec(node->left, res);
+    //     res.push_back(',');
+    //     serializeRec(node->left);
+    // }
+
 public:
 
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
         if(!root) return string{"[]"};
-        string a{"["};
+        string res{"["};
+        queue<TreeNode*> Q;
+        Q.push(root);
+        TreeNode* node = nullptr;
+        while(!Q.empty()){
+            node = Q.front();
+            Q.pop();
+            if(!node){
+                res.append(to_string(node->val));
+            }
+            else{
+                res.append("null");
+            }
+            res.push_back(',');
+        }
+        int i = res.size()-1;
+        for(i; i >= 0; i--){
+            if(res[i] >='0' && res[i] <='9'){
+                break;
+            }
+            else{
+                res.pop_back();
+            }
+        }
+        return res;
     }
 
     // Decodes your encoded data to tree.
