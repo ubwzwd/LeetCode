@@ -76,13 +76,12 @@ class Codec {
     //     res.push_back(',');
     //     serializeRec(node->left);
     // }
-
 public:
 
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        if(!root) return string{"[]"};
-        string res{"["};
+        if(!root) return string{""};
+        string res{""};
         queue<TreeNode*> Q;
         Q.push(root);
         TreeNode* node = nullptr;
@@ -93,9 +92,9 @@ public:
                 res.append(to_string(node->val));
             }
             else{
-                res.append("null");
+                res.append("#");
             }
-            res.push_back(',');
+            res.push_back(' ');
         }
         int i = res.size()-1;
         for(i; i >= 0; i--){
@@ -112,6 +111,31 @@ public:
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
         if(data.empty()) return nullptr;
+        // now try to split the string
+        int i = 0;
+        int pos = 0;
+        vector<string> node_val;
+        while(i < data.size()){
+            pos = i;
+            while(i < data.size() && data[i] != ' '){
+                i++;
+            }
+            string temp = data.substr(pos, i-pos);
+            node_val.push_back(temp);
+            i++;
+        }
+        TreeNode* root = new TreeNode(stoi(node_val[0]));
+        queue<TreeNode*> child, parent;
+        child.push(root);
+        for(int i = 1; i < node_val.size(); i++){
+            if(node_val[i] != "n")
+                TreeNode* temp = new TreeNode(stoi(node_val[i]));
+            else TreeNode* temp = nullptr;
+            child.push(temp);
+        }
+        while(!child.empty()){
+            
+        }
     }
 };
 
