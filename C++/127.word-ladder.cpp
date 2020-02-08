@@ -69,58 +69,65 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <unordered_set>
 using namespace std;
 // @lc code=start
 class Solution {
-    int diff(string& a, string& b){
-        int res = 0;
-        for(int i = 0; i < a.size(); i++){
-            if(a[i] != b[i]) res++;
-        }
-        return res;
-    }
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        int length = 0;
-        bool isEndWordExists = false;
-        for(int i = 0; i < wordList.size(); i++){
-            if(wordList[i] == endWord){
-                isEndWordExists = true;
-                break;
-            }
-        }
-        
-        if(isEndWordExists == false) return 0;
-        int res = 0;
-        queue<pair<int,int>> Q;
-        vector<int> visited(wordList.size(), 0);
-        for(int i = 0; i < wordList.size(); i++){
-            if(diff(wordList[i], beginWord) == 1) {
-                Q.push(make_pair(i, 2));
-                visited[i] = 1;
-            }
-        }
-        int cur_index=0, cur_layer = 0;
-        while(!Q.empty()){
-            cur_index = Q.front().first;
-            cur_layer = Q.front().second;
-            Q.pop();
-            if(wordList[cur_index] == endWord){
-                res = cur_layer;
-                break;
-            } 
-            if(cur_layer <= wordList.size())
-            {
-                for(int i = 0; i < wordList.size(); i++){
-                    if(cur_index != i && diff(wordList[i], wordList[cur_index]) == 1 && visited[i] == 0){
-                        Q.push(make_pair(i, cur_layer+1));
-                        visited[i] = 1;
+        unordered_set<string> dict(wordList.begin(), wordList.end()); 
+        if(!dict.count(endWord)) return 0;
+        unordered_set<string> qBegin;
+        unordered_set<string> qEnd;
+        qBegin.insert(beginWord);
+        qEnd.insert(endWord);
+
+        int l = beginWord.size();
+        int step = 0;
+
+        // this loop will end in 2 cases
+        // 1. after changing a letter, the current string is equal to the endWord, then break, return the steps
+        // 2. No one matches the endWord until the dict is erased to empty, so the queue should be empty later, then break
+        while(!qBegin.empty() && !qEnd.empty()){
+            step++;
+            // go further with the larger set
+            unordered_set<string> temp;
+            if(qBegin.size() > qEnd.size()){
+                for(string w : qBegin){
+                    for(int i = 0; i < l; i++){
+                        char ch = w[i];
+                        for(char j = 'a'; j <= 'z'; j++){
+                            w[i] = j;
+                            // if found in qEnd
+                            if(qEnd.count(w)) return step+1;
+                            // if not exists in dict
+                            if(!dict.count(w)) continue;
+                            dict.erase(w);
+                            temp.insert(w);
+                        }
+                        w[i] = ch;
                     }
                 }
+                qBegin.swap(temp);
             }
-            else break;
+            else{
+                for(string w : qEnd){
+                    for(int i = 0; i < l; i++){
+                        char ch = w[i];
+                        for(char j = 'a'; j <= 'z'; j++){
+                            w[i] = j;
+                            if(qBegin.count(w)) return step+1;
+                            if(!dict.count(w)) continue;
+                            dict.erase(w);
+                            temp.insert(w);
+                        }
+                        w[i] = ch;
+                    }
+                }
+                qEnd.swap(temp);
+            }
         }
-        return res;
+        return 0;
     }
 };
 // @lc code=end
