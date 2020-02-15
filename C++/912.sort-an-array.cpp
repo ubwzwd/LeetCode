@@ -37,35 +37,44 @@
 using namespace std;
 
 // @lc code=start
+// class Solution {
+//     void swap(int& a, int& b){
+//         int c = a;
+//         a = b;
+//         b = c;
+//     }
+
+//     void quickSort(vector<int>& nums, int first, int last){
+//         if(first >= last) return;
+//         int p = first;
+//         int pivot = nums[last];
+//         for(int i = first; i < last; i++){
+//             if(nums[i] < pivot){
+//                 swap(nums[i], nums[p]);
+//                 p++;
+//             }
+//         }
+//         swap(nums[p], nums[last]);
+//         quickSort(nums, first, p-1);
+//         quickSort(nums,p+1, last);
+//     }
+
+// public:
+//     vector<int> sortArray(vector<int>& nums) {
+//         // sort(nums.begin(), nums.end());
+//         if(nums.empty()) return nums;
+//         // implement quick sort
+//         quickSort(nums,0,nums.size()-1);
+//         return nums;
+//     }
+// };
+
 class Solution {
-    void swap(int& a, int& b){
-        int c = a;
-        a = b;
-        b = c;
-    }
-
-    void quickSort(vector<int>& nums, int first, int last){
-        if(first >= last) return;
-        int p = first;
-        int pivot = nums[last];
-        for(int i = first; i < last; i++){
-            if(nums[i] < pivot){
-                swap(nums[i], nums[p]);
-                p++;
-            }
-        }
-        swap(nums[p], nums[last]);
-        quickSort(nums, first, p-1);
-        quickSort(nums,p+1, last);
-    }
-
+    // merge sort
 public:
     vector<int> sortArray(vector<int>& nums) {
-        // sort(nums.begin(), nums.end());
-        if(nums.empty()) return nums;
-        // implement quick sort
-        quickSort(nums,0,nums.size()-1);
-        return nums;
+        if(nums.empty()) return {};
+        
     }
 };
 // @lc code=end

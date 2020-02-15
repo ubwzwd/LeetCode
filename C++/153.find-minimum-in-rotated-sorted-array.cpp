@@ -38,8 +38,9 @@
  * 
  */
 #include <vector>
-#include <syslimits.h>
+#include <climits>
 using namespace std;
+// using binary search
 class Solution {
 public:
     int findMin(vector<int>& nums) {
@@ -59,4 +60,20 @@ public:
         return nums[begin];
     }
 };
+
+// // using divide and conquer
+// class Solution {
+//     // find the minimun number in [left, right)
+//     int findMinRec(vector<int>& nums, int left, int right){
+//         if(right-left == 1) return nums[left];
+//         int mid = (right-left)/2+left;
+//         int leftRes = findMinRec(nums, left, mid);
+//         int rightRes = findMinRec(nums, mid, right);
+//         return leftRes<rightRes? leftRes : rightRes;
+//     }
+// public:
+//     int findMin(vector<int>& nums) {
+//         return findMinRec(nums, 0, nums.size());
+//     }
+// };
 
