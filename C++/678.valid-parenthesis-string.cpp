@@ -6,11 +6,11 @@
  * https://leetcode.com/problems/valid-parenthesis-string/description/
  *
  * algorithms
- * Medium (33.63%)
+ * Medium (33.75%)
  * Likes:    860
  * Dislikes: 29
- * Total Accepted:    38K
- * Total Submissions: 112.6K
+ * Total Accepted:    38.1K
+ * Total Submissions: 112.9K
  * Testcase Example:  '"()"'
  *
  * 
@@ -56,52 +56,48 @@
  */
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 // @lc code=start
-// use the similiar algorithm without *
-// class Solution {
-// public:
-//     bool checkValidString(string s) {
-//         int len = s.size();
-//         if(len == 0) return true;
-//         int lower = 0, upper = 0;
-//         for(int i = 0; i < len; i++){
-//             if(s[i] == '('){
-//                 lower++;
-//                 upper++;
-//             }
-//             else if(s[i] == ')'){
-//                 lower--;
-//                 upper--;
-//             }
-//             else{
-//                 lower--;
-//                 upper++;
-//             }
-//             lower = lower<0? 0:lower;
-//             if(upper < 0) return false;
-//         }
-//         return lower == 0;
-//     }
-// };
-
-// try dp
 class Solution {
 public:
     bool checkValidString(string s) {
         int len = s.size();
         if(len == 0) return true;
+        // dp[i][j] = true means that s[i:j] is valid
         vector<vector<bool>> dp(len, vector<bool>(len, false));
+        // process the initial state(length = 2) 
         for(int i = 0; i < len; i++){
             if(s[i] == '*') dp[i][i] = true;
             if(i < len-1 &&
-                (s[i] == '(' || s[i] == '*')&&
-                (s[i+1] == ')' || s[i+1] == '*'))
-            {
+            (s[i] == '(' || s[i] == '*') &&
+            (s[i+1] == ')' || s[i+1] == '*')
+            ){
                 dp[i][i+1] = true;
             }
-            
         }
+        // from state k to state k+1
+        // suppose the length of the current substring is n+1 (n+1 starts from 3)
+        for(int n = 2; n < len; n++){
+            for(int i = 0; i < len-n; i++){
+                // expand either side of the string of length n-1
+                if(s[i] == '*' && dp[i+1][i+n] == true) dp[i][i+n] = true;
+                else if (s[i] == '(' || s[i] == '*'){
+                    for(int k = i+1; k <= i+n; k++){
+                        // this time, s[i] must be the beginning of the parathensis or *
+                        // and s[k] should be the pair
+                        if((s[k] == ')' || s[k] == '*') &&
+                            // and s[i+1, k-1] is valid
+                            (k == i+1 || dp[i+1][k-1]) &&
+                            // and s[k+1,i+n] is also valid, becasue s[i+1, i+n] is seperated by k
+                            (k == i+n || dp[k+1][i+n])){
+                                dp[i][i+n] = true;
+                            }
+                    }
+                }
+            }
+        }
+        return dp[0][len-1];
     }
 };
 // @lc code=end

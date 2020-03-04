@@ -45,29 +45,13 @@ public:
     int mySqrt(int x) {
         if(x == 0 || x == 1) return x;
         // then x > 1
-        int r = x;
-        int left = 1, right = x;
-        while(left <= right){
-            cout << left<< " "<< right;
-            int mid = (right + left)>>1;
-            if(mid*mid <= x && (mid+1)*(mid+1) > x){
-                return mid;
-            }
-            else if((mid+1)*(mid+1) < x){
-                left = mid+1;
-            }
-            else{
-                right = mid;
-            }
+        int left = 0, right = x/2, mid = 0;
+        while(left < right){
+            mid = left+(right-left+1)/2;
+            if(mid > x/mid) right = mid-1;
+            else left = mid;
         }
-        return right;
+        return left;
     }
 };
-int main()
-{
-    int x = 36;
-    Solution s;
-    int res = s.mySqrt(x);
-    return 0;
-}
 

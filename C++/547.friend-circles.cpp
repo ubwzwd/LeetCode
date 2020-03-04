@@ -66,38 +66,100 @@
 
 // @lc code=start
 #include <vector>
+#include <unordered_set>
 #include <queue>
 using namespace std;
+// class Solution {
+// public:
+//     // BFS
+//     int findCircleNum(vector<vector<int>>& M) {
+//         int res = 0;
+//         if(M.size() == 0){
+//             return res;
+//         }
+//         int len = M.size();
+//         queue<int> Q;
+//         for(int i = 0; i < len; i++){
+//             if(M[i][i] == 1){
+//                 M[i][i] = 0;
+//                 res++;
+//                 Q.push(i);
+//                 while (!Q.empty())
+//                 {
+//                     int index = Q.front();
+//                     Q.pop();
+//                     for(int k = 0; k < len; k++){
+//                         if(M[index][k] == 1){
+//                             Q.push(k);
+//                             M[index][k] = 0;
+//                             M[k][index] = 0;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         return res;
+//     }
+// };
+
+// forget everything about BFS, use Union Find
+class UnionFindSet{
+private:
+    vector<int> ranks_, parents_;
+    int groups;
+public:
+    UnionFindSet(int n){
+        ranks_ = vector<int>(n+1, 0);
+        parents_ = vector<int>(n+1, 0);
+        for(int i = 0; i < parents_.size(); i++){
+            parents_[i] = i;
+        }
+        groups = n;
+    }
+    bool Union(int u, int v){
+        int uRoot = Find(u);
+        int vRoot = Find(v);
+        if(vRoot == uRoot) return false;
+        if(ranks_[uRoot] < ranks_[vRoot])
+            parents_[uRoot] = vRoot;
+        else if(ranks_[uRoot] > ranks_[vRoot])
+            parents_[vRoot] = uRoot;
+        else // uRoot == vRoot
+        {
+            parents_[uRoot] = vRoot;
+            ranks_[vRoot]++;
+        }
+        groups--;
+        return true;
+    }
+    int Find(int u){
+        if(parents_[u] != u){
+            parents_[u] = Find(parents_[u]);
+        }
+        return parents_[u];
+    }
+    int getGroupNum(){
+        return groups;
+    }
+};
+
 class Solution {
 public:
-    // BFS
     int findCircleNum(vector<vector<int>>& M) {
-        int res = 0;
-        if(M.size() == 0){
-            return res;
-        }
-        int len = M.size();
-        queue<int> Q;
-        for(int i = 0; i < len; i++){
-            if(M[i][i] == 1){
-                M[i][i] = 0;
-                res++;
-                Q.push(i);
-                while (!Q.empty())
-                {
-                    int index = Q.front();
-                    Q.pop();
-                    for(int k = 0; k < len; k++){
-                        if(M[index][k] == 1){
-                            Q.push(k);
-                            M[index][k] = 0;
-                            M[k][index] = 0;
-                        }
-                    }
-                }
+        int n = M.size();
+        UnionFindSet s(n);
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(M[i][j]) s.Union(i,j);
             }
         }
-        return res;
+        
+        // unordered_set<int> groups;
+        // for(int i = 0; i < n; i++){
+        //     groups.insert(s.Find(i));
+        // }
+
+        return s.getGroupNum();
     }
 };
 // @lc code=end
