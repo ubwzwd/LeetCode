@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="10.regular-expression-matching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="100.same-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="102.binary-tree-level-order-traversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1021.remove-outermost-parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="105.construct-binary-tree-from-preorder-and-inorder-traversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11.container-with-most-water.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1111.maximum-nesting-depth-of-two-valid-parentheses-strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1122.relative-sort-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="113.path-sum-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1137.n-th-tribonacci-number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="114.flatten-binary-tree-to-linked-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1143.longest-common-subsequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="119.pascals-triangle-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1192.critical-connections-in-a-network.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="120.triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="121.best-time-to-buy-and-sell-stock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1211.queries-quality-and-percentage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1218.longest-arithmetic-subsequence-of-given-difference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="122.best-time-to-buy-and-sell-stock-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="123.best-time-to-buy-and-sell-stock-iii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="126.word-ladder-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="127.word-ladder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="133.clone-graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="138.copy-list-with-random-pointer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="138.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="139.word-break.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="140.word-break-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="141.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="141.linked-list-cycle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="142(2).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="142.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="148.sort-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="15.3-sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="152.maximum-product-subarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="153.find-minimum-in-rotated-sorted-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="155.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="16.3-sum-closest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="160(2).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="160.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="167.two-sum-ii-input-array-is-sorted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="169.majority-element.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="17.letter-combinations-of-a-phone-number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="174.dungeon-game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="18.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="186.reverse-words-in-a-string-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="188.best-time-to-buy-and-sell-stock-iv.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="189.rotate-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="19.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="198.house-robber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="199.binary-tree-right-side-view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="20.valid-parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="200.number-of-islands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="203.remove-linked-list-elements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="204.count-primes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="206.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="207.course-schedule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="209.minimum-size-subarray-sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="21.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="21.merge-two-sorted-lists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="210.course-schedule-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="22.generate-parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="224.basic-calculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="224.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="225.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="23.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="23.merge-k-sorted-lists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="230.kth-smallest-element-in-a-bst.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="232.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="235.lowest-common-ancestor-of-a-binary-search-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="236.lowest-common-ancestor-of-a-binary-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="238.product-of-array-except-self.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="24.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="240.search-a-2-d-matrix-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="246.strobogrammatic-number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="25(2).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="25.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="256.paint-house.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="278.first-bad-version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="28.implement-str-str.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="280.wiggle-sort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="289.game-of-life.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="29.divide-two-integers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="297.serialize-and-deserialize-binary-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3.longest-substring-without-repeating-characters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="300.longest-increasing-subsequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="301.remove-invalid-parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="303.range-sum-query-immutable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="309.best-time-to-buy-and-sell-stock-with-cooldown.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="315.count-of-smaller-numbers-after-self.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="32.longest-valid-parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="322.coin-change.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="324.wiggle-sort-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="328.odd-even-linked-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="33.search-in-rotated-sorted-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="338.counting-bits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="34.find-first-and-last-position-of-element-in-sorted-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="342.power-of-four.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="35.search-insert-position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="376.wiggle-subsequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="39.combination-sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="39.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="399.evaluate-division.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="4.median-of-two-sorted-arrays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="40.combination-sum-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="40.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="402.remove-k-digits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="41.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="410.split-array-largest-sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="42.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="42.trapping-rain-water.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="429.n-ary-tree-level-order-traversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="449.serialize-and-deserialize-bst.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="45.jump-game-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="452.minimum-number-of-arrows-to-burst-balloons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="455.assign-cookies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="46.permutations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="47.permutations-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="472.concatenated-words.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="48.rotate-image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="486.predict-the-winner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="49.group-anagrams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="496.next-greater-element-i.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="5.longest-palindromic-substring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="50.pow-x-n.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="503.next-greater-element-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="51.n-queens.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="518.coin-change-2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="52.n-queens-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="53.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="53.maximum-subarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="530.minimum-absolute-difference-in-bst.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="539.minimum-time-difference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="542.01-matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="547.friend-circles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="55.jump-game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="56.merge-intervals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="62.unique-paths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="63.unique-paths-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="630.course-schedule-iii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="639.decode-ways-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="64.minimum-path-sum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="678.valid-parenthesis-string.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="679.24-game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="682.baseball-game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="684.redundant-connection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="69.sqrt-x.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="70.climbing-stairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="700.search-in-a-binary-search-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="701.insert-into-a-binary-search-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="704.binary-search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="707.design-linked-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="709.to-lower-case.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="714.best-time-to-buy-and-sell-stock-with-transaction-fee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="73.set-matrix-zeroes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="734.sentence-similarity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="737.sentence-similarity-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="746.min-cost-climbing-stairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="75.sort-colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="76.minimum-window-substring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="778.swim-in-rising-water.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="78.subsets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="8.string-to-integer-atoi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="81.search-in-rotated-sorted-array-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="814.binary-tree-pruning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="82.remove-duplicates-from-sorted-list-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="83.remove-duplicates-from-sorted-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="844.backspace-string-compare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="845.longest-mountain-in-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="856.score-of-parentheses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="86.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="86.partition-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="875.koko-eating-bananas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="876.middle-of-the-linked-list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="89.gray-code.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="90.subsets-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="91.decode-ways.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="912.sort-an-array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="92.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="92.reverse-linked-list-ii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="921.minimum-add-to-make-parentheses-valid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="94.binary-tree-inorder-traversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="946.validate-stack-sequences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="96.unique-binary-search-trees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="98.validate-binary-search-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="980.unique-paths-iii.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="99.recover-binary-search-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="994.rotting-oranges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="solution_Wudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_search_practice.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graph_practice.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

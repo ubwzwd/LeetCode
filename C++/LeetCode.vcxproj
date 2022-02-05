@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{002E2358-D0E2-4D1F-A5C2-CA958F913727}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="10.regular-expression-matching.cpp" />
+    <ClCompile Include="100.same-tree.cpp" />
+    <ClCompile Include="102.binary-tree-level-order-traversal.cpp" />
+    <ClCompile Include="1021.remove-outermost-parentheses.cpp" />
+    <ClCompile Include="105.construct-binary-tree-from-preorder-and-inorder-traversal.cpp" />
+    <ClCompile Include="11.container-with-most-water.cpp" />
+    <ClCompile Include="1111.maximum-nesting-depth-of-two-valid-parentheses-strings.cpp" />
+    <ClCompile Include="1122.relative-sort-array.cpp" />
+    <ClCompile Include="113.path-sum-ii.cpp" />
+    <ClCompile Include="1137.n-th-tribonacci-number.cpp" />
+    <ClCompile Include="114.flatten-binary-tree-to-linked-list.cpp" />
+    <ClCompile Include="1143.longest-common-subsequence.cpp" />
+    <ClCompile Include="119.pascals-triangle-ii.cpp" />
+    <ClCompile Include="1192.critical-connections-in-a-network.cpp" />
+    <ClCompile Include="120.triangle.cpp" />
+    <ClCompile Include="121.best-time-to-buy-and-sell-stock.cpp" />
+    <ClCompile Include="1211.queries-quality-and-percentage.cpp" />
+    <ClCompile Include="1218.longest-arithmetic-subsequence-of-given-difference.cpp" />
+    <ClCompile Include="122.best-time-to-buy-and-sell-stock-ii.cpp" />
+    <ClCompile Include="123.best-time-to-buy-and-sell-stock-iii.cpp" />
+    <ClCompile Include="126.word-ladder-ii.cpp" />
+    <ClCompile Include="127.word-ladder.cpp" />
+    <ClCompile Include="133.clone-graph.cpp" />
+    <ClCompile Include="138.copy-list-with-random-pointer.cpp" />
+    <ClCompile Include="138.cpp" />
+    <ClCompile Include="139.word-break.cpp" />
+    <ClCompile Include="140.word-break-ii.cpp" />
+    <ClCompile Include="141.cpp" />
+    <ClCompile Include="141.linked-list-cycle.cpp" />
+    <ClCompile Include="142(2).cpp" />
+    <ClCompile Include="142.cpp" />
+    <ClCompile Include="148.sort-list.cpp" />
+    <ClCompile Include="15.3-sum.cpp" />
+    <ClCompile Include="152.maximum-product-subarray.cpp" />
+    <ClCompile Include="153.find-minimum-in-rotated-sorted-array.cpp" />
+    <ClCompile Include="155.cpp" />
+    <ClCompile Include="16.3-sum-closest.cpp" />
+    <ClCompile Include="160(2).cpp" />
+    <ClCompile Include="160.cpp" />
+    <ClCompile Include="167.two-sum-ii-input-array-is-sorted.cpp" />
+    <ClCompile Include="169.majority-element.cpp" />
+    <ClCompile Include="17.letter-combinations-of-a-phone-number.cpp" />
+    <ClCompile Include="174.dungeon-game.cpp" />
+    <ClCompile Include="18.cpp" />
+    <ClCompile Include="186.reverse-words-in-a-string-ii.cpp" />
+    <ClCompile Include="188.best-time-to-buy-and-sell-stock-iv.cpp" />
+    <ClCompile Include="189.rotate-array.cpp" />
+    <ClCompile Include="19.cpp" />
+    <ClCompile Include="198.house-robber.cpp" />
+    <ClCompile Include="199.binary-tree-right-side-view.cpp" />
+    <ClCompile Include="2.cpp" />
+    <ClCompile Include="20.valid-parentheses.cpp" />
+    <ClCompile Include="200.number-of-islands.cpp" />
+    <ClCompile Include="203.remove-linked-list-elements.cpp" />
+    <ClCompile Include="204.count-primes.cpp" />
+    <ClCompile Include="206.cpp" />
+    <ClCompile Include="207.course-schedule.cpp" />
+    <ClCompile Include="209.minimum-size-subarray-sum.cpp" />
+    <ClCompile Include="21.cpp" />
+    <ClCompile Include="21.merge-two-sorted-lists.cpp" />
+    <ClCompile Include="210.course-schedule-ii.cpp" />
+    <ClCompile Include="22.generate-parentheses.cpp" />
+    <ClCompile Include="224.basic-calculator.cpp" />
+    <ClCompile Include="224.cpp" />
+    <ClCompile Include="225.cpp" />
+    <ClCompile Include="23.cpp" />
+    <ClCompile Include="23.merge-k-sorted-lists.cpp" />
+    <ClCompile Include="230.kth-smallest-element-in-a-bst.cpp" />
+    <ClCompile Include="232.cpp" />
+    <ClCompile Include="235.lowest-common-ancestor-of-a-binary-search-tree.cpp" />
+    <ClCompile Include="236.lowest-common-ancestor-of-a-binary-tree.cpp" />
+    <ClCompile Include="238.product-of-array-except-self.cpp" />
+    <ClCompile Include="24.cpp" />
+    <ClCompile Include="240.search-a-2-d-matrix-ii.cpp" />
+    <ClCompile Include="246.strobogrammatic-number.cpp" />
+    <ClCompile Include="25(2).cpp" />
+    <ClCompile Include="25.cpp" />
+    <ClCompile Include="256.paint-house.cpp" />
+    <ClCompile Include="278.first-bad-version.cpp" />
+    <ClCompile Include="28.implement-str-str.cpp" />
+    <ClCompile Include="280.wiggle-sort.cpp" />
+    <ClCompile Include="289.game-of-life.cpp" />
+    <ClCompile Include="29.divide-two-integers.cpp" />
+    <ClCompile Include="297.serialize-and-deserialize-binary-tree.cpp" />
+    <ClCompile Include="3.longest-substring-without-repeating-characters.cpp" />
+    <ClCompile Include="300.longest-increasing-subsequence.cpp" />
+    <ClCompile Include="301.remove-invalid-parentheses.cpp" />
+    <ClCompile Include="303.range-sum-query-immutable.cpp" />
+    <ClCompile Include="309.best-time-to-buy-and-sell-stock-with-cooldown.cpp" />
+    <ClCompile Include="315.count-of-smaller-numbers-after-self.cpp" />
+    <ClCompile Include="32.longest-valid-parentheses.cpp" />
+    <ClCompile Include="322.coin-change.cpp" />
+    <ClCompile Include="324.wiggle-sort-ii.cpp" />
+    <ClCompile Include="328.odd-even-linked-list.cpp" />
+    <ClCompile Include="33.search-in-rotated-sorted-array.cpp" />
+    <ClCompile Include="338.counting-bits.cpp" />
+    <ClCompile Include="34.find-first-and-last-position-of-element-in-sorted-array.cpp" />
+    <ClCompile Include="342.power-of-four.cpp" />
+    <ClCompile Include="35.search-insert-position.cpp" />
+    <ClCompile Include="376.wiggle-subsequence.cpp" />
+    <ClCompile Include="39.combination-sum.cpp" />
+    <ClCompile Include="39.cpp" />
+    <ClCompile Include="399.evaluate-division.cpp" />
+    <ClCompile Include="4.median-of-two-sorted-arrays.cpp" />
+    <ClCompile Include="40.combination-sum-ii.cpp" />
+    <ClCompile Include="40.cpp" />
+    <ClCompile Include="402.remove-k-digits.cpp" />
+    <ClCompile Include="41.cpp" />
+    <ClCompile Include="410.split-array-largest-sum.cpp" />
+    <ClCompile Include="42.cpp" />
+    <ClCompile Include="42.trapping-rain-water.cpp" />
+    <ClCompile Include="429.n-ary-tree-level-order-traversal.cpp" />
+    <ClCompile Include="449.serialize-and-deserialize-bst.cpp" />
+    <ClCompile Include="45.jump-game-ii.cpp" />
+    <ClCompile Include="452.minimum-number-of-arrows-to-burst-balloons.cpp" />
+    <ClCompile Include="455.assign-cookies.cpp" />
+    <ClCompile Include="46.permutations.cpp" />
+    <ClCompile Include="47.permutations-ii.cpp" />
+    <ClCompile Include="472.concatenated-words.cpp" />
+    <ClCompile Include="48.rotate-image.cpp" />
+    <ClCompile Include="486.predict-the-winner.cpp" />
+    <ClCompile Include="49.group-anagrams.cpp" />
+    <ClCompile Include="496.next-greater-element-i.cpp" />
+    <ClCompile Include="5.longest-palindromic-substring.cpp" />
+    <ClCompile Include="50.pow-x-n.cpp" />
+    <ClCompile Include="503.next-greater-element-ii.cpp" />
+    <ClCompile Include="51.n-queens.cpp" />
+    <ClCompile Include="518.coin-change-2.cpp" />
+    <ClCompile Include="52.n-queens-ii.cpp" />
+    <ClCompile Include="53.cpp" />
+    <ClCompile Include="53.maximum-subarray.cpp" />
+    <ClCompile Include="530.minimum-absolute-difference-in-bst.cpp" />
+    <ClCompile Include="539.minimum-time-difference.cpp" />
+    <ClCompile Include="542.01-matrix.cpp" />
+    <ClCompile Include="547.friend-circles.cpp" />
+    <ClCompile Include="55.jump-game.cpp" />
+    <ClCompile Include="56.merge-intervals.cpp" />
+    <ClCompile Include="62.unique-paths.cpp" />
+    <ClCompile Include="63.unique-paths-ii.cpp" />
+    <ClCompile Include="630.course-schedule-iii.cpp" />
+    <ClCompile Include="639.decode-ways-ii.cpp" />
+    <ClCompile Include="64.minimum-path-sum.cpp" />
+    <ClCompile Include="678.valid-parenthesis-string.cpp" />
+    <ClCompile Include="679.24-game.cpp" />
+    <ClCompile Include="682.baseball-game.cpp" />
+    <ClCompile Include="684.redundant-connection.cpp" />
+    <ClCompile Include="69.sqrt-x.cpp" />
+    <ClCompile Include="70.climbing-stairs.cpp" />
+    <ClCompile Include="700.search-in-a-binary-search-tree.cpp" />
+    <ClCompile Include="701.insert-into-a-binary-search-tree.cpp" />
+    <ClCompile Include="704.binary-search.cpp" />
+    <ClCompile Include="707.design-linked-list.cpp" />
+    <ClCompile Include="709.to-lower-case.cpp" />
+    <ClCompile Include="714.best-time-to-buy-and-sell-stock-with-transaction-fee.cpp" />
+    <ClCompile Include="73.set-matrix-zeroes.cpp" />
+    <ClCompile Include="734.sentence-similarity.cpp" />
+    <ClCompile Include="737.sentence-similarity-ii.cpp" />
+    <ClCompile Include="746.min-cost-climbing-stairs.cpp" />
+    <ClCompile Include="75.sort-colors.cpp" />
+    <ClCompile Include="76.minimum-window-substring.cpp" />
+    <ClCompile Include="778.swim-in-rising-water.cpp" />
+    <ClCompile Include="78.subsets.cpp" />
+    <ClCompile Include="8.string-to-integer-atoi.cpp" />
+    <ClCompile Include="81.search-in-rotated-sorted-array-ii.cpp" />
+    <ClCompile Include="814.binary-tree-pruning.cpp" />
+    <ClCompile Include="82.remove-duplicates-from-sorted-list-ii.cpp" />
+    <ClCompile Include="83.remove-duplicates-from-sorted-list.cpp" />
+    <ClCompile Include="844.backspace-string-compare.cpp" />
+    <ClCompile Include="845.longest-mountain-in-array.cpp" />
+    <ClCompile Include="856.score-of-parentheses.cpp" />
+    <ClCompile Include="86.cpp" />
+    <ClCompile Include="86.partition-list.cpp" />
+    <ClCompile Include="875.koko-eating-bananas.cpp" />
+    <ClCompile Include="876.middle-of-the-linked-list.cpp" />
+    <ClCompile Include="89.gray-code.cpp" />
+    <ClCompile Include="90.subsets-ii.cpp" />
+    <ClCompile Include="91.decode-ways.cpp" />
+    <ClCompile Include="912.sort-an-array.cpp" />
+    <ClCompile Include="92.cpp" />
+    <ClCompile Include="92.reverse-linked-list-ii.cpp" />
+    <ClCompile Include="921.minimum-add-to-make-parentheses-valid.cpp" />
+    <ClCompile Include="94.binary-tree-inorder-traversal.cpp" />
+    <ClCompile Include="946.validate-stack-sequences.cpp" />
+    <ClCompile Include="96.unique-binary-search-trees.cpp" />
+    <ClCompile Include="98.validate-binary-search-tree.cpp" />
+    <ClCompile Include="980.unique-paths-iii.cpp" />
+    <ClCompile Include="99.recover-binary-search-tree.cpp" />
+    <ClCompile Include="994.rotting-oranges.cpp" />
+    <ClCompile Include="binary_search_practice.cc" />
+    <ClCompile Include="graph_practice.cc" />
+    <ClCompile Include="solution_Wudi.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

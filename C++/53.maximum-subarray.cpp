@@ -30,12 +30,25 @@
  * the divide and conquer approach, which is more subtle.
  * 
  */
-
+#include <vector>
+#include <climits>
+using namespace std;
 // @lc code=start
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        
+        int res = nums[0];
+        int temp = nums[0];
+        for(int i = 1; i < nums.size(); i++){
+            if(temp > 0){
+                temp += nums[i];
+                res = max(temp, res);
+            } else{
+                temp = nums[i];
+                res = max(temp, res);
+            }
+        }
+        return res;
     }
 };
 // @lc code=end
