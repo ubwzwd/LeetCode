@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        },
+    {
+        "type": "java",
+        "name": "Java Attach",
+        "request": "attach",
+        "hostName": "localhost",
+        "port": "<debug port of the debuggee>"
+    },
+        {
             "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
             "request": "launch",
