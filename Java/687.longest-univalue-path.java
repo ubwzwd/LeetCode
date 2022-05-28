@@ -1,5 +1,3 @@
-import javax.swing.tree.TreeNode;
-
 /*
  * @lc app=leetcode id=687 lang=java
  *
