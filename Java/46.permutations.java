@@ -9,6 +9,10 @@ import java.util.List;
 
 // @lc code=start
 class Solution {
+
+    // time complexity: O(n!)
+    // space complexity: O(n)
+
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         dfs(nums, 0, res);
