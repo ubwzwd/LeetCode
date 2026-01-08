@@ -18,8 +18,8 @@ using namespace std;
 //         stack<char> sign;
 //         char temp_char;
 //         bool compute_flag = false;
-//         // push the numbers into number stack and put the signs into sign stack
-//         for (int i = 0; i < s.length(); i++)
+//         // push the numbers into number stack and put the signs into sign
+//         stack for (int i = 0; i < s.length(); i++)
 //         {
 //             if (isdigit(s[i]))
 //             {
@@ -83,7 +83,7 @@ using namespace std;
 //                     }
 //                     compute_flag = false;
 //                 }
-//                 else    
+//                 else
 //                 {
 //                     compute_flag = false;
 //                 }
@@ -100,11 +100,12 @@ using namespace std;
 //     int res = ans.calculate(s);
 //     cout<<res;
 // }
-
-class Solution{
-    public:
-        int calculate(string s) {
-            
-        }
+// @lc code=start
+class Solution {
+public:
+  int calculate(string s) {
+    int res = 0;
+    return res;
+  }
 }
-
+// @lc code=end
