@@ -107,5 +107,5 @@ public:
     int res = 0;
     return res;
   }
-}
+};
 // @lc code=end
