@@ -6,16 +6,11 @@
 #include <string>
 using namespace std;
 // @lc code=start
-class Solution
-{
+class Solution {
 private:
-    int backtrackingSolution(string binary)
-    {
-    }
+  int backtrackingSolution(string binary) {}
 
 public:
-    int numberOfUniqueGoodSubsequences(string binary)
-    {
-    }
+  int numberOfUniqueGoodSubsequences(string binary) {}
 };
 // @lc code=end

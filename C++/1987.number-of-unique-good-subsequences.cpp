@@ -36,17 +36,28 @@ private:
   int dpSolution(string binary) {
     int dp0 = 0; // the number of subsequence ended by 0
     int dp1 = 0; // the number of subsequence ended by 1
+    int mod = 1e9 + 7;
+    int hasZero = 0;
+    for (int i = 0; i < binary.size(); i++) {
+      if (binary[i] == '0') {
+        dp0 = (dp0 + dp1) % mod;
+        hasZero = 1;
+      } else {
+        dp1 = (dp0 + dp1 + 1) % mod;
+      }
+    }
+    return (dp0 + dp1 + hasZero) % mod;
   }
 
 public:
   int numberOfUniqueGoodSubsequences(string binary) {
-    unordered_set<string> resultSet;
-    string cur;
-    recursionSolution(binary, 0, cur, resultSet);
+    // unordered_set<string> resultSet;
+    // string cur;
+    // recursionSolution(binary, 0, cur, resultSet);
     // for (const auto &i : resultSet) {
     //   cout << i << endl;
     // }
-    return resultSet.size() % (10 ^ 9 + 7);
+    return dpSolution(binary);
   }
 };
 // @lc code=end
